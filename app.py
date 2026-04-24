@@ -70,7 +70,14 @@ if menu == "Upload":
                 progress.progress((i + 1) / len(df))
 
             eid = save_eval(results)
+
+# 🔥 set the selected dataset immediately
+            st.session_state["selected_dataset"] = eid
+            st.session_state["menu"] = "Dataset View"
+
             st.success(f"Saved dataset: {eid}")
+            st.rerun()
+            
 
 # =========================================================
 # ---------------- ALL EVALUATIONS ----------------
